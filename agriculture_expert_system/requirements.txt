@@ -1,0 +1,4 @@
+# Requirements for Rule-Based Expert System for Agriculture
+# Pure Python implementation without external paid APIs or machine learning libraries
+
+streamlit>=1.30.0
