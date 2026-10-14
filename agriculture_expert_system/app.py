@@ -51,6 +51,31 @@ CUSTOM_CSS = """
         font-family: 'JetBrains Mono', monospace !important;
     }
 
+    /* Force Pristine White Theme regardless of system preference */
+    .stApp, [data-testid="stAppViewContainer"] {
+        background-color: #ffffff !important;
+        color: #0f172a !important;
+    }
+
+    [data-testid="stSidebar"] {
+        background-color: #f8fafc !important;
+        border-right: 1px solid #e2e8f0 !important;
+    }
+
+    [data-testid="stHeader"] {
+        background-color: rgba(255, 255, 255, 0.95) !important;
+    }
+
+    /* Text & Headings */
+    h1, h2, h3, h4, h5, h6 {
+        color: #0f172a !important;
+        font-weight: 700;
+    }
+
+    p, span, label {
+        color: #1e293b;
+    }
+
     /* Main Container Padding */
     .main .block-container {
         padding-top: 2rem;
@@ -60,12 +85,12 @@ CUSTOM_CSS = """
     /* App Header Banner */
     .app-hero-banner {
         background: linear-gradient(135deg, #134e4a 0%, #065f46 50%, #047857 100%);
-        color: white;
+        color: white !important;
         padding: 2.2rem 2.4rem;
         border-radius: 18px;
         margin-bottom: 2rem;
-        box-shadow: 0 10px 25px -5px rgba(6, 95, 70, 0.25);
-        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 10px 25px -5px rgba(6, 95, 70, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .app-hero-title {
@@ -73,23 +98,23 @@ CUSTOM_CSS = """
         font-weight: 800;
         margin: 0;
         letter-spacing: -0.5px;
-        color: #f0fdf4;
+        color: #ffffff !important;
     }
 
     .app-hero-sub {
         font-size: 1.05rem;
         font-weight: 400;
-        color: #a7f3d0;
+        color: #d1fae5 !important;
         margin-top: 0.5rem;
     }
 
-    /* Feature Card */
+    /* Feature Card in White Theme */
     .custom-card {
-        background-color: #ffffff;
+        background-color: #ffffff !important;
         border-radius: 14px;
         padding: 1.5rem;
         margin-bottom: 1.2rem;
-        border: 1px solid #e2e8f0;
+        border: 1px solid #e2e8f0 !important;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
@@ -97,32 +122,69 @@ CUSTOM_CSS = """
     .custom-card:hover {
         transform: translateY(-2px);
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+        border-color: #cbd5e1 !important;
+    }
+
+    .custom-card h4, .custom-card h5 {
+        color: #0f172a !important;
+        font-weight: 700;
+    }
+
+    /* Streamlit Form Widgets in White Theme */
+    div[data-baseweb="select"] > div {
+        background-color: #ffffff !important;
+        border-color: #cbd5e1 !important;
+        color: #0f172a !important;
+    }
+
+    div[data-baseweb="select"] svg {
+        fill: #475569 !important;
+    }
+
+    .stNumberInput input, .stTextInput input {
+        background-color: #ffffff !important;
+        color: #0f172a !important;
+        border-color: #cbd5e1 !important;
+    }
+
+    /* Streamlit Expanders */
+    [data-testid="stExpander"] {
+        background-color: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        margin-bottom: 0.8rem;
+    }
+
+    .streamlit-expanderHeader {
+        background-color: #f8fafc !important;
+        color: #0f172a !important;
+        font-weight: 600 !important;
     }
 
     /* Rule Badge */
     .rule-badge {
         display: inline-block;
-        background: #ecfdf5;
-        color: #047857;
+        background: #ecfdf5 !important;
+        color: #047857 !important;
         font-family: 'JetBrains Mono', monospace;
         font-weight: 600;
         font-size: 0.82rem;
         padding: 0.25rem 0.65rem;
         border-radius: 6px;
-        border: 1px solid #a7f3d0;
+        border: 1px solid #a7f3d0 !important;
         margin-bottom: 0.5rem;
     }
 
     .rule-badge-soil {
-        background: #eff6ff;
-        color: #1d4ed8;
-        border-color: #bfdbfe;
+        background: #eff6ff !important;
+        color: #1d4ed8 !important;
+        border-color: #bfdbfe !important;
     }
 
     .rule-badge-diag {
-        background: #fffbeb;
-        color: #b45309;
-        border-color: #fde68a;
+        background: #fffbeb !important;
+        color: #b45309 !important;
+        border-color: #fde68a !important;
     }
 
     /* Status Pill */
@@ -137,35 +199,42 @@ CUSTOM_CSS = """
     }
 
     .status-success {
-        background: #dcfce7;
-        color: #15803d;
+        background: #dcfce7 !important;
+        color: #15803d !important;
     }
 
     .status-warning {
-        background: #fef3c7;
-        color: #b45309;
+        background: #fef3c7 !important;
+        color: #b45309 !important;
     }
 
     .status-danger {
-        background: #fee2e2;
-        color: #b91c1c;
+        background: #fee2e2 !important;
+        color: #b91c1c !important;
     }
 
     /* Disclaimer Box */
     .disclaimer-box {
-        background: #fffbeb;
-        border-left: 4px solid #f59e0b;
+        background: #fffbeb !important;
+        border-left: 4px solid #f59e0b !important;
         padding: 1rem 1.2rem;
         border-radius: 8px;
         font-size: 0.9rem;
-        color: #92400e;
+        color: #92400e !important;
         margin-top: 1.5rem;
+        border-top: 1px solid #fef3c7;
+        border-right: 1px solid #fef3c7;
+        border-bottom: 1px solid #fef3c7;
+    }
+
+    .disclaimer-box strong {
+        color: #78350f !important;
     }
 
     /* AI Explanatory Box */
     .ai-explainer {
-        background: #f8fafc;
-        border: 1px solid #cbd5e1;
+        background: #f8fafc !important;
+        border: 1px solid #cbd5e1 !important;
         border-radius: 12px;
         padding: 1.2rem;
         margin-top: 1rem;
@@ -181,14 +250,14 @@ CUSTOM_CSS = """
 
     .sidebar-brand h2 {
         font-weight: 800;
-        color: #065f46;
+        color: #065f46 !important;
         margin: 0.2rem 0 0 0;
         font-size: 1.35rem;
     }
 
     .sidebar-brand span {
         font-size: 0.8rem;
-        color: #64748b;
+        color: #64748b !important;
     }
 </style>
 """
