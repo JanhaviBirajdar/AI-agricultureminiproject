@@ -12,6 +12,14 @@ Features:
 - AI Rule Visualizer: Deep-dive inspection of the rule base and forward chaining trace
 """
 
+import os
+import sys
+
+# Ensure local modules (rules, knowledge_base) are resolvable regardless of working directory
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+if CURRENT_DIR not in sys.path:
+    sys.path.insert(0, CURRENT_DIR)
+
 import streamlit as st
 from typing import List, Dict, Any
 from rules import (

@@ -1,0 +1,2 @@
+# Root requirements file for Cloud Deployment (Streamlit Community Cloud, Render, etc.)
+streamlit>=1.30.0
